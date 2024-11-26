@@ -46,11 +46,39 @@ To run this application, you need the following installed:
    ```auduino
    http://127.0.0.1:5000/
 3. Interact with the following routes:
+- `/RawVideo:` Stream raw video feed.
+- `/MaskedVideo:` Stream video with applied masks.
+- `/StrechedVideo:` Stream stretched video feed.
+- `/ObjectDetectionWithColor:` Stream object detection feed with color enhancement.
+- `/SetFieldOfView:` Update the field of view by sending a POST request with coordinates.
+- `/ResetFieldOfView:` Reset the field of view to default.
+- `/UpdateHSV:` Adjust HSV parameters for video processing.
 
-* /RawVideo: Stream raw video feed.
-/MaskedVideo: Stream video with applied masks.
-/StrechedVideo: Stream stretched video feed.
-/ObjectDetectionWithColor: Stream object detection feed with color enhancement.
-/SetFieldOfView: Update the field of view by sending a POST request with coordinates.
-/ResetFieldOfView: Reset the field of view to default.
-/UpdateHSV: Adjust HSV parameters for video processing.
+## Folder Structure
+  ```graphql
+    VisionAI-WebSite/
+  ├── app.py                      # Main Flask application
+  ├── ComputerVision/
+  │   └── generate_frames.py      # Core video processing logic
+  ├── static/
+  │   ├── css/                    # CSS files for styling
+  │   ├── js/                     # JavaScript files
+  │   └── media/                  # Images and videos
+  ├── templates/
+  │   └── Index.html              # Main HTML file for the web app
+  ├── README.md                   # Documentation
+  └── requirements.txt            # List of dependencies
+
+## Screenshots and Media
+
+*Home Page:*
+
+*Raw Video Streaming:*
+
+*Future Enhancements*
+
+## Contribution
+Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+## License
+This project is licensed under the MIT License.
