@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+    font-size: 25pt;
+    float: left;
+    color: #E0EAF5;
+    cursor: pointer;
+}
+
+.video-container {
+	width: 680px;
+	height: 480px;
+	background-color: lightgray;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 20px;
+	border: 1px solid #000;
+}
+.Video {
+	width: 100%;
+	height: 100%;
+}
+.CornerTargetsContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.CornerTarget {
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	cursor: grab;
+}
+i {
+	margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+}
+.navbar-mainbg{
+	background-color: #213E60;
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+	margin-right: 10px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #213E60;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #fff;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+	bottom: 10px;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #213E60;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+
+@media(min-width: 992px){
+	.navbar-expand-custom {
+	    -ms-flex-flow: row nowrap;
+	    flex-flow: row nowrap;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	}
+	.navbar-expand-custom .navbar-nav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	.navbar-expand-custom .navbar-toggler {
+	    display: none;
+	}
+	.navbar-expand-custom .navbar-collapse {
+	    display: -ms-flexbox!important;
+	    display: flex!important;
+	    -ms-flex-preferred-size: auto;
+	    flex-basis: auto;
+	}
+}
+
+
+@media (max-width: 991px){
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+	}
+}
+
+.FPS {
+    position: absolute;
+    top: 20px;
+    right: 28%;
+    border-radius: 16px;
+    background: #213E60;
+    padding: 21px;
+    width: 92px;
+    height: 79px;
+    color: #E0EAF5;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	margin-top: 4%;
+    margin-right: 15%;
+}
+
+.FPS span {
+    color: #FF5C00;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#Menus {
+	margin-left: 62%;
+    margin-top: -480px;
+    width: 31%;
+}
+
+.row {
+	margin-left: -1px;
+    width: 42%;
+}
+
+
+//===================
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons styles */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input[type="submit"].btn,
+button.btn {
+	cursor: pointer;
+}
+
+a.btn,.btn {
+   margin-right: 1em; /* remove this while use*/
+	display: inline-block;
+	outline: none;
+	*zoom: 1;
+	text-align: center;
+	text-decoration: none;
+	font-family: inherit;
+	font-weight: 300;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	border: 1px solid;
+	transition: all 0.2s ease;
+	box-sizing: border-box;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+/* Sizes */
+
+.btn-medium {
+	font-size: 0.9375em;
+	padding: 0.5375em 1.375em;
+}
+
+/* Colors */
+.btn-green {
+	color: #3CB371;
+	border-color: #3CB371;
+}
+.btn-green:hover {
+  background: #3CB371;
+  color: #fff;
+  border-color: #3CB371;		
+}
+
+.btn-blue {
+	color: #4682B4;
+	border-color: #4682B4;
+}
+.btn-blue:hover {
+  background: #4682B4;
+  color: #fff;
+  border-color: #4682B4;		
+}
+
+/* mask sliders */
+
+.Apply_Mask {
+    background-color: #213E60;
+    color: #E0EAF5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Apply_Mask h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E0EAF5;
+    padding-bottom: 10px;
+}
+
+.Apply_Mask p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.Apply_Mask .L_H, 
+.Apply_Mask .L_S, 
+.Apply_Mask .L_V, 
+.Apply_Mask .U_H, 
+.Apply_Mask .U_S, 
+.Apply_Mask .U_V {
+    margin-bottom: 15px;
+}
+
+.Apply_Mask label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+.Apply_Mask span {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    background: #E0EAF5;
+    color: #213E60;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.Apply_Mask input[type="range"] {
+    width: calc(100% - 140px);
+    margin-left: 10px;
+    vertical-align: middle;
+}

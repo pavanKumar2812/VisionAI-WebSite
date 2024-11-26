@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../static/Styles/style.css">
+    <script src="../static/Scripts/script.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg" style="height: 62px;">
+        <a class="navbar-brand navbar-logo title" href="#">VisionAI</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Original Video"><i class="fas fa-tachometer-alt"></i>Original Video</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Select ROI"><i class="far fa-address-book"></i>Region of Interest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Set HSV Values"><i class="far fa-clone"></i>Set Mask</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Detect Object with color"><i class="far fa-calendar-alt"></i>Detection Object with color</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Detect Faces"><i class="far fa-chart-bar" ></i>Face Detection & Recognition</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-caption="Hand Gesture Recognition"><i class="far fa-copy"></i>Hand Gesture Recognition</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="video-container">
+        <img class="Video" src="{{ url_for('raw_video') }}">
+        <div class="CornerTargetsContainer ROI">
+            <img class="ui-widget CornerTarget" id="P0" style="top:0; left:0" src="{{ url_for('static', filename='images/CornerTarget.png') }}" />
+            <img class="ui-widget CornerTarget" id="P1" style="top:0; right:0" src="{{ url_for('static', filename='images/CornerTarget.png') }}" />
+            <img class="ui-widget CornerTarget" id="P2" style="bottom:0; left:0" src="{{ url_for('static', filename='images/CornerTarget.png') }}" />
+            <img class="ui-widget CornerTarget" id="P3" style="bottom: 0; right: 0" src="{{ url_for('static', filename='images/CornerTarget.png') }}" />
+        </div>
+    </div>
+    <div class="FPS">
+        FPS: <span>60</span>
+    </div>
+    <div class="ROI_metadata">
+        <div id="Menus" class="ROI_DisplayCornerValues">
+            <h3>Select ROI</h3>
+            <div>
+                Drag corner points
+                <div class="row">
+                    <input class="col CornerTL" disabled value="">
+                    <input class="col CornerTR" disabled value="">
+                </div>
+                <div class="row">
+                    <input class="col CornerBL" disabled value="">
+                    <input class="col CornerBR" disabled value="">
+                </div>
+                <a class="btn btn-medium btn-blue set-roi" href="#">Set</a>
+                <a class="btn btn-medium btn-green clear-roi" href="#">Clear</a>
+            </div>
+        </div>
+        <div id="Menus" class="Apply_Mask">
+            <h3>Set HSV Values</h3>
+            <div>
+                <p>Please configure the HSV values for detecting objects using a color mask.</p>
+                <div class="slider-container L_H">
+                    <label for="SliderLowerH">Lower H:</label>
+                    <span class="slider-value" id="valueLowerH">0</span>
+                    <input type="range" class="SliderHSV slider" id="SliderLowerH" min="0" max="255" value="0">
+                </div>
+                <div class="slider-container L_S">
+                    <label for="SliderLowerS">Lower S:</label>
+                    <span class="slider-value" id="valueLowerS">0</span>
+                    <input type="range" class="SliderHSV slider" id="SliderLowerS" min="0" max="255" value="0">
+                </div>
+                <div class="slider-container L_V">
+                    <label for="SliderLowerV">Lower V:</label>
+                    <span class="slider-value" id="valueLowerV">206</span>
+                    <input type="range" class="SliderHSV slider" id="SliderLowerV" min="0" max="255" value="206">
+                </div>
+                <div class="slider-container U_H">
+                    <label for="SliderUpperH">Upper H:</label>
+                    <span class="slider-value" id="valueUpperH">179</span>
+                    <input type="range" class="SliderHSV slider" id="SliderUpperH" min="0" max="255" value="179">
+                </div>
+                <div class="slider-container U_S">
+                    <label for="SliderUpperS">Upper S:</label>
+                    <span class="slider-value" id="valueUpperS">255</span>
+                    <input type="range" class="SliderHSV slider" id="SliderUpperS" min="0" max="255" value="255">
+                </div>
+                <div class="slider-container U_V">
+                    <label for="SliderUpperV">Upper V:</label>
+                    <span class="slider-value" id="valueUpperV">255</span>
+                    <input type="range" class="SliderHSV slider" id="SliderUpperV" min="0" max="255" value="255">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
