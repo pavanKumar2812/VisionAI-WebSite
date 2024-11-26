@@ -69,6 +69,7 @@ VisionAI-WebSite/
 │   └── Index.html              # Main HTML file for the web app
 ├── README.md                   # Documentation
 └── requirements.txt            # List of dependencies
+```
 
 ## Screenshots and Media
 
