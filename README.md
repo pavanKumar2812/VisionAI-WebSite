@@ -56,18 +56,19 @@ To run this application, you need the following installed:
 
 ## Folder Structure
   ```graphql
-    VisionAI-WebSite/
-  ├── app.py                      # Main Flask application
-  ├── ComputerVision/
-  │   └── generate_frames.py      # Core video processing logic
-  ├── static/
-  │   ├── css/                    # CSS files for styling
-  │   ├── js/                     # JavaScript files
-  │   └── media/                  # Images and videos
-  ├── templates/
-  │   └── Index.html              # Main HTML file for the web app
-  ├── README.md                   # Documentation
-  └── requirements.txt            # List of dependencies
+      VisionAI-WebSite/
+    ├── app.py                      # Main Flask application
+    ├── ComputerVision/
+    │   └── generate_frames.py      # Core video processing logic
+    ├── static/
+    │   ├── css/                    # CSS files for styling
+    │   ├── js/                     # JavaScript files
+    │   └── media/                  # Images and videos
+    ├── templates/
+    │   └── Index.html              # Main HTML file for the web app
+    ├── README.md                   # Documentation
+    └── requirements.txt            # List of dependencies
+
 
 ## Screenshots and Media
 
