@@ -1,0 +1,5 @@
+ultralytics
+chess
+opencv-python
+numpy
+flask
