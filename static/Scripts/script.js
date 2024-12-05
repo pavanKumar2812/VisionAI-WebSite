@@ -1,10 +1,7 @@
 $(document).ready(function(){
-    // Global Variables
-    var $CornerTarget;
 
     // Set initial state
     $('.video-container').hide();
-    $('.CornerTarget').hide();
     $('.ROI_sliders').hide();
     $('.ROI_DisplayCornerValues').hide();
     $('.Apply_Mask').hide();
