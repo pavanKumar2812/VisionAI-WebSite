@@ -74,10 +74,12 @@ VisionAI-WebSite/
 ## Screenshots and Media
 
 *Home Page:*
-
-*Raw Video Streaming:*
+![ROI Image](assets/ROI.jpeg)
 
 *Future Enhancements*
+![RAW Image](assets/HSV Mask.jpeg)
+![RAW Image](assets/Hand.jpeg)
+![RAW Image](assets/Face detection.jpeg)
 
 ## Contribution
 Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
