@@ -74,12 +74,12 @@ VisionAI-WebSite/
 ## Screenshots and Media
 
 *Home Page:*
-![ROI Image](assets/ROI.jpeg)
+![ROI Image](asset/ROI.jpeg)
 
 *Future Enhancements*
-![RAW Image](assets/HSV Mask.jpeg)
-![RAW Image](assets/Hand.jpeg)
-![RAW Image](assets/Face detection.jpeg)
+![RAW Image](asset/HSV Mask.jpeg)
+![RAW Image](asset/Hand.jpeg)
+![RAW Image](asset/Face detection.jpeg)
 
 ## Contribution
 Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
