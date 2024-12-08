@@ -32,7 +32,7 @@ To run this application, you need the following installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/VisionAI-WebSite.git
+   git clone https://github.com/pavanKumar2812/VisionAI-WebSite.git
    cd VisionAI-WebSite
 2. Install dependencies:
    ```bash
